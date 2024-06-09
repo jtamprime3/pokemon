@@ -26,4 +26,5 @@ name = gets.chomp
 puts "Hello #{name}"
 continue
 # puts "hello world"
+puts "testing"
 
