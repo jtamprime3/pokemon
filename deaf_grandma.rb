@@ -1,41 +1,27 @@
-# puts "hello world"
 require 'io/console'
 def continue
   print "Press any key to continue "
   STDIN.getch
   print "             \r"
 end
-puts "Welcome to the deaf grandma program"
+
+puts "You are talking to deaf grandma"
+continue
+puts "To end conversation with grandma you need to say BYE 3 times in succession"
 continue
 puts "Say anything.                "
-
-#uppercase = ""
-# input = gets.chomp
-# bye_counter = 0
-# until input == uppercase && bye_counter < 3
-#   uppercase = input.upcase
-
-#   if input != uppercase
-#     puts "HUH?! SPEAK UP, SONNY!"
-#     input = gets.chomp
-#   else
-#     puts "NOT SINCE 19#{rand(30..58)}"
-#     input = gets.chomp
-#     bye_counter += 1
-#   end
-# end
-# puts "Bye Sonny" if bye_counter == 3
-
-
-bye_count = 0
-until bye_count == 3 do
-  speak = gets.chomp
-  im_yelling = speak == speak.upcase
-  said_bye = speak == 'BYE'
-
-  puts "HUH?! SPEAK UP, SONNY!" unless im_yelling
-  puts "NO NOT UNTIL #{rand(1930..1950)}" if im_yelling
-
-  bye_count = 0 unless said_bye
-  bye_count = bye_count + 1 if said_bye
+bye_counter = 0
+until bye_counter == 3 do 
+  input = gets.chomp
+  uppercase = input.upcase
+  puts "HUH?! SPEAK UP, SONNY!" unless input == uppercase
+  puts "NOT SINCE 19#{rand(30..58)}" if input == uppercase
+  bye_counter += 1 if input == "BYE"
+  bye_counter = 0 if input =! "BYE"
+  puts "Grandma saids Bye" if bye_counter == 3
 end
+
+ 
+
+
+
