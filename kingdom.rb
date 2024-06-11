@@ -25,11 +25,8 @@ until input == "walk" || input == "run"
   puts "try again type either walk or run"
   input = gets.chomp
 end
-if input == "walk"
-  puts "walking"
-end
-if input == "run"
-  puts "running"
-end
+
+puts "walking" if input == "walk"
+puts "running" if input == "run"
 continue
 puts "King Mickey: Power sleeps within you…"
