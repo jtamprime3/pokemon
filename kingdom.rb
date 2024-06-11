@@ -2,7 +2,7 @@ require 'io/console'
 def continue
   print "Press any key to continue "
   STDIN.getch
-  print "             \r"
+  print "             \r" # clears the line after key presses
 end
 
 puts "Sora: I've been having these weird thoughts lately."
@@ -19,42 +19,14 @@ puts "             The door is still shut."
 continue
 puts "             Now, step forward. Can you do it?"
 continue
-puts "Type walk to walk or run to run"
-input = gets.chomp
-until input == "walk" || input == "run"
-  puts "try again type either walk or run"
+puts "Type walk to walk or run to run, you must run and walk to continue"
+walk = ""
+run = ""
+until walk == "yes" && run == "yes"
   input = gets.chomp
+  puts "walking" if input == "walk"
+  walk = "yes" if input == "walk"
+  puts "running" if input == "run"
+  run = "yes" if input == "run"
+  puts "try again! type either walk or run" if input != "walk" && input != "run"
 end
-
-# puts "walking" if input == "walk"
-# puts "running" if input == "run"
-# continue
-# puts "King Mickey: Power sleeps within you…"
-
-# puts "Sora: I've been having these weird thoughts lately."
-# puts "      Like, is any of this for real, or not?"
-# puts "King Mickey: So much to do, so little time..."
-# puts "             Take your time. Don't be afraid."
-# puts "             The door is still shut."
-# puts "King Mickey: Now, step forward. Can you do it?"
-
-# puts "On-screen: type 'walk' to move."
-# puts "           [type 'RUN' to run.]"
-
-
-
-# input = ""
-# walked = ""
-# ran = ""
-
-# until walked == 'yes' && ran == 'yes' do
-#   input = gets.chomp
-
-#   walked = 'yes' if input == 'walk'
-#   ran = 'yes' if input == 'RUN'
-
-#   puts "hey I'm walking" if input == 'walk'
-#   puts "OMG I'm RUNNING" if input == 'RUN'
-# end
-
-# puts 'King Mickey: Power sleeps within you…'
