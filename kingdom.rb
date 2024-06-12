@@ -7,7 +7,7 @@ end
 
 puts "Sora: I've been having these weird thoughts lately."
 continue
-puts "       Like, is any of this for real, or not?"
+puts "      Like, is any of this for real, or not?"
 continue
 puts "King Mickey: So much to do, so little time..."
 continue
@@ -30,3 +30,4 @@ until walk == "yes" && run == "yes"
   run = "yes" if input == "run"
   puts "try again! type either walk or run" if input != "walk" && input != "run"
 end
+puts 'King Mickey: Power sleeps within you…'
